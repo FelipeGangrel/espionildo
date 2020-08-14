@@ -7,7 +7,7 @@ module.exports = async (cli) => {
     const inputFile = path.join(__dirname, './config', 'index.js')
     const outputFile = path.join(cli.helpers.configPath(), 'espionildo.js')
     await cli.copy(inputFile, outputFile)
-    cli.command.completed('created', 'config/espionildo.js')
+    cli.command.completed('create', 'config/espionildo.js')
   } catch (error) {
     // fazer nada com o error
   }
