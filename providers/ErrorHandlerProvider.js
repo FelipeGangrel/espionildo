@@ -4,14 +4,14 @@ const { ServiceProvider } = require('@adonisjs/fold')
 
 class ErrorHandlerProvider extends ServiceProvider {
   register() {
-    this.app.singleton('Espionildo/Helper/ErrorHandler', (app) => {
-      const Config = app.use('Adonis/Src/Config')
-      const ErrorHandler = require('../src/ErrorHandler')
+    this.app.singleton('Espionildo/Helper/Espionildo', () => {
+      const Config = this.app.use('Adonis/Src/Config')
+      const Espionildo = require('../src/Espionildo')
 
-      return new ErrorHandler(Config)
+      return new Espionildo(Config)
     })
 
-    this.app.alias('Espionildo/Helper/ErrorHandler', 'ErrorHandler')
+    this.app.alias('Espionildo/Helper/Espionildo', 'Espionildo')
   }
 }
 

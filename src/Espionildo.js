@@ -1,10 +1,10 @@
 'use strict'
 
-class ErrorHandler {
-  defaultStatus = 400
-  defaultMessage = 'Mensagem de erro padrão e bem bobaiona'
-
+class Espionildo {
   constructor(Config) {
+    this.defaultStatus = 400
+    this.defaultMessage = 'Mensagem de erro padrão e bem bobaiona'
+
     this.config = Config.merge('espionildo', {
       defaultStatus: this.defaultStatus,
       defaultMessage: this.defaultMessage
@@ -22,4 +22,4 @@ class ErrorHandler {
   }
 }
 
-module.exports = ErrorHandler
+module.exports = Espionildo
