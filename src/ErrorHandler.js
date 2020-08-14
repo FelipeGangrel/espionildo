@@ -11,8 +11,11 @@ class ErrorHandler {
     })
   }
 
-  handle({ response, error }) {
-    const { status = this.defaultStatus, message = this.defaultMessage } = error
+  handle(response, error) {
+    const {
+      status = this.config.defaultStatus,
+      message = this.config.defaultMessage
+    } = error
     return response.status(status).send({
       error: { message }
     })
